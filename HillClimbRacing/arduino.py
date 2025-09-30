@@ -1,9 +1,14 @@
+import serial
+import time
 import pyautogui
 import keyboard
 import time
 
+arduino = serial.Serial('COM7', 9600)  # COMポートは環境に合わせて変更
+
 time.sleep(2)
-keyboard.press('left')  # 左キーを押しっぱなし
+
+arduino.write(b'press\n')  # 左キー押して
 
 while not keyboard.is_pressed('a'):
     try:
@@ -15,4 +20,4 @@ while not keyboard.is_pressed('a'):
     except pyautogui.ImageNotFoundException:
         pass  # 見つからなかったら何もしない
 
-keyboard.release('left')  # 'a'キーが押されたら左キーを離す
+arduino.write(b'release\n')  # 左キー離して
