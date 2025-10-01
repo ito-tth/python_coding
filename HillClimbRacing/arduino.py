@@ -17,7 +17,8 @@ while not keyboard.is_pressed('a'):
             x, y = pyautogui.center(p)
             pyautogui.click(x, y)
             pyautogui.click(x, y)
-    except pyautogui.ImageNotFoundException:
+    except pyautogui.ImageNotFounException:
         pass  # 見つからなかったら何もしない
+    time.sleep(0.01)
 
 arduino.write(b'release\n')  # 左キー離して
