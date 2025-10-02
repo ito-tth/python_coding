@@ -22,17 +22,22 @@ while not keyboard.is_pressed('a'):
         pass  # 見つからなかったら何もしない
     
     try:
-        p = pyautogui.locateOnScreen(r"C:\Users\ito_t\Videos\Captures\home.png", confidence = 1)
+        p = pyautogui.locateOnScreen(r"C:\Users\ito_t\Videos\Captures\home.png", confidence = 0.8)
         if p is not None:
             pyautogui.click(1510,1170)
+            time.sleep(10)
+            pyautogui.click(1850,0)
+            time.sleep(1)
+            pyautogui.click(880,25)
+            time.sleep(1)
+            pyautogui.click(780,120)
     except pyautogui.ImageNotFoundException:
         pass
     
     try:
-        p = pyautogui.locateOnScreen(r"C:\Users\ito_t\Videos\Captures\start_button.png", confidence = 0.5)
+        p = pyautogui.locateOnScreen(r"C:\Users\ito_t\Videos\Captures\start.png", confidence = 0.5)
         if p is not None:
-            x, y = pyautogui.center(p)
-            pyautogui.click(x, y)
+            pyautogui.click(800,730)
     except pyautogui.ImageNotFoundException:
         pass
     
