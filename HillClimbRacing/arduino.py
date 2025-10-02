@@ -16,6 +16,7 @@ while not keyboard.is_pressed('a'):
         if p is not None:
             x, y = pyautogui.center(p)
             pyautogui.click(x, y)
+            time.sleep(0.5)
             pyautogui.click(x, y)
     except pyautogui.ImageNotFoundException:
         pass  # 見つからなかったら何もしない
